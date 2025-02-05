@@ -10,7 +10,7 @@
         <input type="text" id="payee" placeholder="Enter payee address">
         <input type="number" id="amount" placeholder="Enter amount to transfer">
         <button class="btn" onclick="transfer()">Transfer</button>
-        <button class="btn" onclick="transaction()">Transaction</button>
+        <button class="btn" onclick="transaction1()">Transaction</button>
                 <form action="/" method="post">
                     <input type="submit" value="Main">
         </form>
@@ -85,7 +85,7 @@
                 console.log("accounts[0] " + accounts[0]);
                 await contract.methods.weixin(payer, payee,amount).send({ from: accounts[0]});
             }
-            async function transaction() {
+            async function transaction1() {
                 const result = await contract.methods.transaction().call();
                 document.getElementById('view_payer').innerText = "Payer: " + result[0];
                 document.getElementById('view_payee').innerText = "Payee: " + result[1];
